@@ -15,7 +15,7 @@ public class MatricesBus {
         JTextArea hoja = new JTextArea();
         String salida = "", cualBoleto, filaAsiento, columnaAsiento;
         boolean salir = false, encontrado = false, devolucion = false;
-
+    //se crea un ciclo para que el usuario ingrese la cantidad de filas y columnas
         do {
             filas = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la cantidad de filas (entre 5 y 9)"));
             columnas = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la cantidad de columnas ( entre 5 y 9)"));
@@ -26,7 +26,7 @@ public class MatricesBus {
             }
         } while ((filas < 5 || filas > 9) || (columnas < 5 || columnas > 9));
         cine = new String[filas][columnas];
-
+//se crea un ciclo para llenar la matriz con los asientos del autobus
         for (fila = 0; fila < filas; fila++) {
             for (columna = 0; columna < columnas; columna++) {
                 cine[fila][columna] = butacas[fila] + (columna + 1);
@@ -58,7 +58,7 @@ public class MatricesBus {
                 salida += "\nIngrese el asiento que desea comprar";
                 hoja.setText(salida);
                 cualBoleto = JOptionPane.showInputDialog(hoja).toUpperCase();
-
+            //se busca el asiento que el usuario desea comprar
                 for (fila = 0; fila < filas; fila++) {
                     for (columna = 0; columna < columnas; columna++) {
                         if (cualBoleto.equals(cine[fila][columna])) {
@@ -68,7 +68,7 @@ public class MatricesBus {
                         }
                     }
                 }
-
+            //si el asiento se encuentra se asigna y se marca como ocupado
                 if (encontrado) {
                     JOptionPane.showMessageDialog(null, "Asiento #" + cualBoleto + " Asignado. que disfrute su viaje");
                     cine[cualFila][cualColumna] = "X";
