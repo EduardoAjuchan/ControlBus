@@ -3,10 +3,10 @@ package matricescine;
 import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 
-public class MatricesCine {
+public class MatricesBus {
 
     /**
-     * Ejercicio cine
+     * Control de asientos de un autobus
      */
     public static void main(String[] args) {
         String cine[][];
